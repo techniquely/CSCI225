@@ -2,170 +2,180 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title> Well, Techniquely </title>
+    <title>Well, Techniquely</title>
 </head>
+
 <body>
-<aside>
-    <hr>
-    <!--Header Element-->
-    <details>
-    <summary>Click to access links within the webpage!</summary>
-       <h3>Quick Links!</h3>
-    <nav>
-        <ul>
-           <li><a href=https://www.usca.edu/ target="_blank">USCA</a></li>
-           <li><a href="#Introduction">Go to Introduction</a></li>
-           <li><a href="#Portfolio">Go to Portfolio</a></li>
-           <li><a href="#Assignments">Go to Assignments</a></li>
-           <li><a href="#Schedule">Go to Schedule</a></li>
-           <li><a href=https://open.spotify.com/playlist/6uSH4Xds6BYBjD9HvTu6Mh target="_blank">Spotify</a></li>
-        </ul>
-    </nav>
-    </details>
-    <hr>
-</aside>
+
+    <!--links-->
+    <aside>
+        <hr>
+
+        <details>
+            <summary>Click to access links within the webpage!</summary>
+            <h3>Quick Links!</h3>
+
+            <nav>
+                <ul>
+                    <li><a href="https://www.usca.edu/" target="_blank">USCA</a></li>
+                    <li><a href="#Introduction">Go to Introduction</a></li>
+                    <li><a href="#Portfolio">Go to Portfolio</a></li>
+                    <li><a href="#Assignments">Go to Assignments</a></li>
+                    <li><a href="#Schedule">Go to Schedule</a></li>
+                    <li><a href="https://open.spotify.com/playlist/6uSH4Xds6BYBjD9HvTu6Mh" target="_blank">Spotify</a></li>
+                </ul>
+            </nav>
+        </details>
+
+        <hr>
+    </aside>
+
+    <!--Header-->
     <header>
         <h1>Welcome to my CSCI 225 Webpage!</h1>
-    </header> 
-    <!--Main Content Area-->
-<img src= "doc/img/techniquely.jpeg" alt="My avatar">
-    <blockquote> “Yeah, Mr. White! Yeah, science!” - Jesse Pinkman  </blockquote>
+    </header>
 
-    <details>
-    <summary> Click to know all about me!  </summary>
-    <h2 id="Introduction">Introduction: </h2>
+    <!--Image + Tags: <blockquote>, <details + summarry>-->
+    <img src="doc/img/techniquely.jpeg" alt="My avatar">
 
-    <p>Hello World! My name is Technique! Well, Techniquely it's John'nique!
-        I am a Junior Software Engineering Major and I am elated with
-        learning HTML this year. In my spare time, I love playing Apex or Minecraft.
-        I also love to listen to music while thrifting. Believe it or not, this is the 
-        first class where I felt eager to ask for help and have felt engaged with the class!
-        Lovely to meet you all! 
-    </details>
-    </p>
- 
+    <blockquote>
+        “Yeah, Mr. White! Yeah, science!” - Jesse Pinkman
+    </blockquote>
 
-    <h2 id="Portfolio">Portfolio: </h2>
+    <!--Introduction Section-->
+    <section id="Introduction">
+        <details>
+            <summary>Click to know all about me!</summary>
+
+            <h2>Introduction</h2>
+
+            <p>
+                Hello World! My name is Technique! Well, Techniquely it's John'nique!
+                I am a Junior Software Engineering Major and I am elated with learning HTML this year.
+                In my spare time, I love playing Apex or Minecraft. I also love to listen to music while thrifting.
+                Believe it or not, this is the first class where I felt eager to ask for help and have felt engaged
+                with the class! Lovely to meet you all!
+            </p>
+        </details>
+    </section>
+
+    <!--Portfolio Section-->
+    <section id="Portfolio">
+        <h2>Portfolio</h2>
+
         <ul>
+            <li>
+                AWS Certified Cloud Practitioner — validated foundational cloud fluency across compute,
+                networking, security, and AWS billing practices.
+            </li>
 
-
-            <li>AWS Certified Cloud Practitioner — 
-                validated foundational cloud fluency across compute, 
-                networking, security, and AWS billing practices.</li>
-            <li>Information Security — certified in threat analysis, network defense, 
-                risk management, and security compliance fundamentals.</li>
-
-
-
+            <li>
+                Information Security — certified in threat analysis, network defense,
+                risk management, and security compliance fundamentals.
+            </li>
         </ul>
+    </section>
 
+    <!--Assignment Section-->
+    <section id="Assignments">
+        <h2>Assignments</h2>
 
-
-
-    <h2 id="Assignments">Assignments: </h2>
         <ul>
             <li>
                 <a href="doc/Assignment1.docx" target="_blank">Assignment 1</a>
             </li>
         </ul>
+    </section>
 
+    <!-- Schedule Section-->
+    <section id="Schedule">
+        <h2>My Weekly Schedule</h2>
 
+        <table border="3">
+            <tr>
+                <th>Time</th>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
+            </tr>
 
+            <tr>
+                <th>9:00 - 10:00</th>
+                <td rowspan="2">Homework!</td>
+                <td rowspan="2">Class time!</td>
+                <td>Study time!</td>
+                <td rowspan="2">Class time!</td>
+                <td>Study time!</td>
+            </tr>
 
+            <tr>
+                <th>10:00 - 11:00</th>
+                <td>Break!</td>
+                <td>Homework!</td>
+            </tr>
 
-    <h2 id="Schedule">My Weekly Schedule: </h2>
-<table border="3">
-    <tr>
-        <th>Time</th>
-        <th>Monday</th>
-        <th>Tuesday</th>
-        <th>Wednesday</th>
-        <th>Thursday</th>
-        <th>Friday</th>
+            <tr>
+                <th>11:00 - 12:00</th>
+                <td>Lunch</td>
+                <td>Lunch</td>
+                <td>Lunch</td>
+                <td>Lunch</td>
+                <td>Lunch</td>
+            </tr>
 
-    </tr>
+            <tr>
+                <th>12:00 - 1:00</th>
+                <td rowspan="2">Class time!</td>
+                <td rowspan="2">Lab review!</td>
+                <td rowspan="2">Class time!</td>
+                <td rowspan="2">Lab review!</td>
+                <td rowspan="2">Starbies run!</td>
+            </tr>
 
+            <tr>
+                <th>1:00 - 2:00</th>
+            </tr>
 
-    <tr>
-        <!--Note: When creating the table, it's making it for Mon-Fri during the time listed!-->
-        <th>9:00 - 10:00 </th>
-        <td rowspan="2">Homework!</td>
-        <td rowspan="2">Class time!</td>
-        <td>Study time!</td>
-        <td rowspan="2">Class time!</td>
-        <td>Study time!</td>
+            <tr>
+                <th>2:00 - 3:00</th>
+                <td rowspan="2">Work!</td>
+                <td rowspan="2">Class time!</td>
+                <td rowspan="2">Work!</td>
+                <td rowspan="2">Class time!</td>
+                <td rowspan="4">Work!</td>
+            </tr>
 
-    </tr>
+            <tr>
+                <th>3:00 - 4:00</th>
+            </tr>
 
-    <tr>
-        <th>10:00 - 11:00  </th>
-        <td>Break!</td>
-        <td>Homework!</td>
-    
+            <tr>
+                <th>4:00 - 5:00</th>
+                <td rowspan="2">Gym time!</td>
+                <td rowspan="2">Dinner!</td>
+                <td rowspan="2">Gym time!</td>
+                <td rowspan="2">Dinner!</td>
+            </tr>
 
+            <tr>
+                <th>5:00 - 6:00</th>
+            </tr>
+        </table>
+    </section>
 
-    </tr>
+    <!-- Footer -->
+    <footer>
+        <hr>
 
-    <tr>
-        <th>11:00 - 12:00  </th>
-        <td>Lunch</td>
-        <td>Lunch</td>
-        <td>Lunch</td>
-        <td>Lunch</td>        
-        <td>Lunch</td>
+        <p>Contact Information</p>
+        <p>Email: <a href="mailto:jld29@usca.edu">jld29@usca.edu</a></p>
 
-    </tr>
-    
-    <tr>
-        <th>12:00 - 1:00   </th>
-        <td rowspan="2"> Class time!</td>
-        <td rowspan="2"> Lab review!</td>
-        <td rowspan="2">Class time!</td>
-        <td rowspan="2">Lab review!</td>
-        <td rowspan="2">Starbies run!</td>
-    </tr>
-      
-    <tr>
-        <th>1:00 - 2:00    </th>
-    
-    </tr>
-        
-    <tr>
-         <th>2:00 - 3:00    </th> 
-        <td rowspan="2">Work! </td>
-        <td rowspan="2">Class time!</td>
-        <td rowspan="2">Work!</td>
-        <td rowspan="2">Class time!</td>
-        <td rowspan="4">Work!</td>
-    </tr>
-     
-    <tr>
-        <th>3:00 - 4:00    </th>
-       
-    </tr>
-        
-    <tr>
-         <th>4:00 - 5:00    </th>
-         <td rowspan="2">Gym time! </td>
-         <td rowspan="2">Dinner!</td>
-         <td rowspan="2">Gym time!</td>
-         <td rowspan="2">Dinner!</td>
-    </tr>
-      
-    <tr>
-        <th>5:00 - 6:00    </th>
-      
-    </tr>
- 
-</table>
+        <p>&copy; 2026 Johnnie Davis. All rights reserved.</p>
 
-<!--Footer Area-->
-<hr>
-<p>Contact Information</p>
-<p>Email: <a href="mailto:jld29@usca.edu">jld29@usca.edu</a></p>
-<footer>
-    <p> &copy; 2026 Johnnie Davis. All rights reserved. </p>
-</footer>
-<hr>
+        <hr>
+    </footer>
+
 </body>
 </html>
