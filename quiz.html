@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Quiz 4 - Interactive Test</title>
+  <style>
+    /* Global Styles */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: hsl(210, 20%, 95%);
+      color: hsl(210, 30%, 15%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+    }
+
+    /* Quiz Card Box Model & Positioning */
+    .quiz-card {
+      position: relative;
+      width: 100%;
+      max-width: 600px;
+      background-color: hsl(0, 0%, 100%);
+      border: 2px solid hsl(210, 40%, 80%);
+      border-radius: 8px;
+      padding: 30px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .badge {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background-color: hsl(210, 60%, 90%);
+      color: hsl(210, 70%, 30%);
+      font-size: 0.85rem;
+      font-weight: bold;
+      padding: 4px 10px;
+      border-radius: 12px;
+    }
+
+    h1 {
+      margin-top: 0;
+      font-size: 1.5rem;
+      color: hsl(210, 60%, 35%);
+    }
+
+    .question {
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+    }
+
+    /* Options List Styling */
+    .options {
+      list-style-type: none;
+      padding: 0;
+      margin: 0 0 20px 0;
+    }
+
+    .option-btn {
+      width: 100%;
+      text-align: left;
+      background-color: hsl(210, 30%, 98%);
+      border: 1px solid hsl(210, 20%, 85%);
+      border-radius: 6px;
+      padding: 12px 16px;
+      margin-bottom: 10px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.2s, border-color 0.2s;
+    }
+
+    .option-btn:hover {
+      background-color: hsl(210, 50%, 92%);
+      border-color: hsl(210, 50%, 70%);
+    }
+
+    .option-btn.correct {
+      background-color: hsl(120, 40%, 90%);
+      border-color: hsl(120, 50%, 45%);
+      color: hsl(120, 60%, 20%);
+    }
+
+    .option-btn.incorrect {
+      background-color: hsl(0, 50%, 92%);
+      border-color: hsl(0, 50%, 60%);
+      color: hsl(0, 60%, 25%);
+    }
+
+    /* Feedback & Next Button */
+    .feedback {
+      font-weight: bold;
+      margin-bottom: 15px;
+      min-height: 24px;
+    }
+
+    .next-btn {
+      background-color: hsl(210, 60%, 45%);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      display: none;
+    }
+
+    .next-btn:hover {
+      background-color: hsl(210, 60%, 35%);
+    }
+
+    .results {
+      text-align: center;
+    }
+
+    .restart-btn {
+      background-color: hsl(120, 50%, 40%);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="quiz-card">
+    <div id="badge" class="badge">Q 1/5</div>
+    
+    <div id="quiz-body">
+      <h1>CSS Quiz 4</h1>
+      <div id="question" class="question">Question goes here...</div>
+      <div id="options" class="options"></div>
+      <div id="feedback" class="feedback"></div>
+      <button id="next-btn" class="next-btn" onclick="nextQuestion()">Next Question</button>
+    </div>
+
+    <div id="results" class="results" style="display: none;">
+      <h1>Quiz Complete!</h1>
+      <p id="score-text"></p>
+      <button class="restart-btn" onclick="restartQuiz()">Try Again</button>
+    </div>
+  </div>
+
+  <script>
+    const questions = [
+      {
+        question: "1. Which positioning value places an element relative to its nearest non-static ancestor?",
+        options: [
+          { text: "A) static", correct: false },
+          { text: "B) relative", correct: false },
+          { text: "C) absolute", correct: true },
+          { text: "D) fixed", correct: false }
+        ]
+      },
+      {
+        question: "2. Under default box-sizing (content-box), if width=200px, padding=20px (all sides), and border=5px (all sides), what is the total horizontal element width?",
+        options: [
+          { text: "A) 200px", correct: false },
+          { text: "B) 225px", correct: false },
+          { text: "C) 250px", correct: true },
+          { text: "D) 280px", correct: false }
+        ]
+      },
+      {
+        question: "3. In hsl(120, 100%, 50%), what base color does 120 degrees represent?",
+        options: [
+          { text: "A) Red", correct: false },
+          { text: "B) Green", correct: true },
+          { text: "C) Blue", correct: false },
+          { text: "D) Yellow", correct: false }
+        ]
+      },
+      {
+        question: "4. Which CSS unit is relative to the font-size of the parent element?",
+        options: [
+          { text: "A) px", correct: false },
+          { text: "B) vh", correct: false },
+          { text: "C) pt", correct: false },
+          { text: "D) em", correct: true }
+        ]
+      },
+      {
+        question: "5. Which selector target an element with the attribute id='main'?",
+        options: [
+          { text: "A) .main", correct: false },
+          { text: "B) #main", correct: true },
+          { text: "C) main", correct: false },
+          { text: "D) *main", correct: false }
+        ]
+      }
+    ];
+
+    let currentQuestionIndex = 0;
+    let score = 0;
+
+    function loadQuestion() {
+      const q = questions[currentQuestionIndex];
+      document.getElementById("badge").innerText = `Q ${currentQuestionIndex + 1}/${questions.length}`;
+      document.getElementById("question").innerText = q.question;
+      
+      const optionsContainer = document.getElementById("options");
+      optionsContainer.innerHTML = "";
+      document.getElementById("feedback").innerText = "";
+      document.getElementById("next-btn").style.display = "none";
+
+      q.options.forEach(opt => {
+        const btn = document.createElement("button");
+        btn.innerText = opt.text;
+        btn.className = "option-btn";
+        btn.onclick = () => selectOption(btn, opt.correct);
+        optionsContainer.appendChild(btn);
+      });
+    }
+
+    function selectOption(selectedBtn, isCorrect) {
+      const allBtns = document.querySelectorAll(".option-btn");
+      allBtns.forEach(btn => btn.disabled = true); // Disable further selection
+
+      if (isCorrect) {
+        selectedBtn.classList.add("correct");
+        document.getElementById("feedback").innerText = "Correct! 🎉";
+        document.getElementById("feedback").style.color = "hsl(120, 60%, 30%)";
+        score++;
+      } else {
+        selectedBtn.classList.add("incorrect");
+        document.getElementById("feedback").innerText = "Incorrect!";
+        document.getElementById("feedback").style.color = "hsl(0, 60%, 40%)";
+      }
+
+      document.getElementById("next-btn").style.display = "inline-block";
+    }
+
+    function nextQuestion() {
+      currentQuestionIndex++;
+      if (currentQuestionIndex < questions.length) {
+        loadQuestion();
+      } else {
+        showResults();
+      }
+    }
+
+    function showResults() {
+      document.getElementById("quiz-body").style.display = "none";
+      document.getElementById("badge").style.display = "none";
+      document.getElementById("results").style.display = "block";
+      document.getElementById("score-text").innerText = `You scored ${score} out of ${questions.length}!`;
+    }
+
+    function restartQuiz() {
+      currentQuestionIndex = 0;
+      score = 0;
+      document.getElementById("quiz-body").style.display = "block";
+      document.getElementById("badge").style.display = "block";
+      document.getElementById("results").style.display = "none";
+      loadQuestion();
+    }
+
+    // Initialize Quiz
+    loadQuestion();
+  </script>
+</body>
+</html>
