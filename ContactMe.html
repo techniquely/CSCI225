@@ -1,83 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-     <aside>
-        <hr>
-
-        <details>
-            <summary>Click to access links within the webpage!</summary>
-            <h3>Quick Links!</h3>
-
-            <nav>
-                <ul>
-                    <li><a href="https://www.usca.edu/" target="_blank">USCA</a></li>
-                    <li><a href="#Introduction">Go to Introduction</a></li>
-                    <li><a href="#Portfolio">Go to Portfolio</a></li>
-                    <li><a href="#Assignments">Go to Assignments</a></li>
-                    <li><a href="#Schedule">Go to Schedule</a></li>
-                    <li><a href="https://open.spotify.com/playlist/6uSH4Xds6BYBjD9HvTu6Mh" target="_blank">Spotify</a></li>
-                </ul>
-            </nav>
-        </details>
-
-        <hr>
-    </aside>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me - CSCI 225</title>
     
-    <title>Contact Me</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
-<body>
-<hr>
-<h1>Contact Me</h1>
-<hr> 
-<!--Embedded Video-->
-<iframe width="640" height="360" src="https://www.youtube.com/embed/Z10iWqkOlW4?list=RDZ10iWqkOlW4" allowfullscreen></iframe>
+<body class="bg-light pt-5">
 
-<!--Feedback Form-->
-<form name="feedback">
-    <label> First Name: </label>
-    <input type="text" name="fname" placeholder="anonymous" required><br><br>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="index.html">USC Aiken</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html#Introduction">Introduction</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#Portfolio">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#Assignments">Assignments</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#Schedule">Schedule</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="ContactMe.html">Contact Me</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-    <label> Last Name: </label>
-    <input type="text" name="lname" placeholder="anonymous" required><br><br>
+    
+        <div class="row g-4 align-items-start">
+            
+            
+            <div class="col-lg-6">
+                <div class="card shadow-sm p-3 mb-4 border rounded-3 bg-white">
+                    <div class="ratio ratio-16x9 border rounded overflow-hidden">
+                        <iframe src="https://www.youtube.com/embed/Z10iWqkOlW4?list=RDZ10iWqkOlW4" title="Embedded Video" allowfullscreen></iframe>
+                    </div>
+                </div>
 
-    <label> Email: </label>
-    <input type="text" name="mail" placeholder="name@domain.com"><br><br>
+                
+                <div class="card shadow-sm p-4 border rounded-3 bg-white">
+                    <h5 class="mb-3">Quick Preferences</h5>
+                    <div class="mb-3">
+                        <label for="favColor" class="form-label">What's your favorite color?</label>
+                        <input type="color" id="favColor" name="favColor" class="form-control form-control-color">
+                    </div>
+                    <div class="mb-3">
+                        <label for="dateVisited" class="form-label">Date Visited:</label>
+                        <input type="date" id="dateVisited" name="dateVisited" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for="phone" class="form-label">Telephone:</label>
+                        <input type="tel" id="phone" name="phone" class="form-control" placeholder="XXX-XXX-XXXX">
+                    </div>
+                </div>
+            </div>
 
-    <label> Would you recommend this website?</label><br>
-    <input type="radio" name="recommend" value="yes"> Yes 
-    <input type="radio" name="recommend" value="no"> No<br>
+            
+            <div class="col-lg-6">
+                <div class="card shadow-sm p-4 border rounded-3 bg-white">
+                    <h2 class="h4 mb-3">Feedback Form</h2>
+                    
+                    <form action="submit_feedback.php" name="Feedback" method="post">
+                        
+                        
+                        <div class="form-floating mb-3">
+                            <input type="text" name="fname" class="form-control" id="fname" placeholder="First Name">
+                            <label for="fname">First Name*</label>
+                        </div>
 
-    <label> Favorite Website: </label>
-    <select name="favorite">
-        <option value="Google">Google</option>
-        <option value="Facebook">Facebook</option>
-        <option value="Twitter">Twitter</option>
-        <option value="Reddit">Reddit</option>
+                       
+                        <div class="form-floating mb-3">
+                            <input type="text" name="lname" class="form-control" id="lname" placeholder="Last Name">
+                            <label for="lname">Last Name*</label>
+                        </div>
 
-    </select><br>
+                        
+                        <div class="mb-3">
+                            <label for="mail" class="form-label">Email Address:</label>
+                            <input type="email" id="mail" name="mail" class="form-control" placeholder="name@domain.com">
+                            <small id="emailHelpBlock" class="form-text text-muted">Your email will not be shared with anyone else.</small>
+                        </div>
 
-    <label> Rate this website (1-10): </label>
-    <input type="range" name="rating" min="1" max="10"><br>
+                       
+                        <div class="mb-3">
+                            <label class="form-label d-block">Would you recommend this website?</label>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="recommend" id="recYes" value="yes">
+                                <label class="form-check-label" for="recYes">Yes</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="recommend" id="recNo" value="no">
+                                <label class="form-check-label" for="recNo">No</label>
+                            </div>
+                        </div>
 
-    <label>Any additional comments: </label>
-    <textarea name="comment"></textarea><br>
+                       
+                        <div class="mb-3">
+                            <label for="favorite" class="form-label">Preferred Site:</label>
+                            <select name="favorite" id="favorite" class="form-select">
+                                <option value="Google">Google</option>
+                                <option value="Facebook">Facebook</option>
+                                <option value="Twitter">Twitter</option>
+                                <option value="Reddit">Reddit</option>
+                            </select>
+                        </div>
 
-<!--My three Features-->
-    <label for="favColor">What's your favorite color?</label>
-    <input type="color" id="favColor" name="favColor">
+                        
+                        <div class="mb-3">
+                            <label for="rating" class="form-label">Rate this website (1-10):</label>
+                            <input type="range" class="form-range" name="rating" min="1" max="10" id="rating">
+                        </div>
 
+                        
+                        <div class="mb-3">
+                            <label for="comment" class="form-label">Any additional comments:</label>
+                            <textarea class="form-control" name="comment" id="comment" rows="3" placeholder="I suggest..."></textarea>
+                        </div>
 
-    <label for="dateVisited">Date Visited:</label>
-    <input type="date" id="dateVisited" name="dateVisited">
+                        
+                        <button type="submit" class="btn btn-primary w-100">Submit</button>
+                    </form>
+                </div>
+            </div>
 
-    <label for="phone">Telephone:</label>
-    <input type="tel" id="phone" name="phone" placeholder="XXX-XXX-XXXX">
+        </div>
+    </div>
 
-    <button type="submit">Submit</button>
-
-</form>
-
-
-
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 </html>
